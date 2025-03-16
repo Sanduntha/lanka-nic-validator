@@ -1,0 +1,12 @@
+input{
+    height: 40px;
+    width: 330px;
+    border-radius: 6px;
+    margin-top: 40px;
+    color: rgb(0, 132, 0);
+    border: green solid 1px;
+    margin-left: 7px;
+}
+::placeholder{
+    color: green;
+}

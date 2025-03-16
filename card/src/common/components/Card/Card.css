@@ -1,0 +1,38 @@
+.card {
+    margin-top: 60px;
+    margin-left: 250px;
+    border-radius: 8px;
+    width: 350px;
+    height: 590px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* .card2 label {
+    color: rgb(0, 175, 15);
+    font-size: 16px;
+    margin-top: 5px;
+  
+} */
+
+
+img{
+    width: 350px;
+    border-radius: 20px;
+}
+
+button{
+    margin-left: 5px;
+    
+}
+
+
+.close-icon {
+    position: absolute;
+    top: 70px;
+    right: 625px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+  }
+  
