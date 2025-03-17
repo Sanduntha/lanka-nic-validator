@@ -1,13 +1,14 @@
-import React, { useState } from 'react';  
+import React, { useState } from 'react';   
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faTimes } from '@fortawesome/free-solid-svg-icons'; 
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 import './Card.css';
 import InputCard from '../InputCard/InputCard';
-import lankaNIC from 'lanka-nic'; 
+import NIC from 'sl-nic-utils';
 
 export default function Card() {
+  
   const [nicNumber, setNicNumber] = useState(""); 
   const [nicInfo, setNicInfo] = useState({
     birthday: "",
@@ -20,11 +21,17 @@ export default function Card() {
 
   const handleButtonClick = () => {
     try {
-      const info = lankaNIC.getInfoFromNIC(nicNumber);
+      const nic = new NIC(nicNumber);
+      console.log("NIC Info:", nic);
+      
+      if (!nic.isValid) {
+        alert("Please enter a valid NIC number.");
+        return;
+      }
       
       setNicInfo({
-        birthday: info.dateOfBirth.toLocaleDateString(),
-        gender: info.gender,
+        birthday: nic.birthday.toString(),
+        gender: nic.gender,
       });
     } catch (error) {
       console.error("Invalid NIC number or format.", error);
